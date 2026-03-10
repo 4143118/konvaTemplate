@@ -4,7 +4,7 @@ main{
     height: 100vh;
 }
 
-stagecontainer{
+.stagecontainer{
     background-color: aquamarine;
     flex: 1;
 }
