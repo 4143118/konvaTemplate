@@ -10,6 +10,11 @@ let stageContainerHeight = stageContainer.offsetHeight;
 // set default circle colour
 let circleColour = "red";
 
+let sceneWidth = 900;
+let sceneHeight = 1600;
+
+let scale = stageContainerWidth / sceneHeight;
+
 // create the Konva stage
 const stage = new Konva.Stage({
     container: "konva-stage",
@@ -17,9 +22,27 @@ const stage = new Konva.Stage({
     height: stageContainerHeight,
 });
 
+//handle when user change the  size of the window
+function resizeHandler() {
+    stage.width = stageContainerWidth;
+    stage.height = stageContainerHeight;
+    console.log("resize");
+}
+
+//attach to resize event
+window.addEventListener("resize", resizeHandler);
+
 // create our layer
 const firstLayer = new Konva.Layer();
 
+let isPortrait = window.matchMedia("(orientation: portrait)");
+
+console.log(isPortrait);
+
+//
+if (isPortrait) {
+    // if in portrait do some code
+}
 
 // add the layer to our stage
 stage.add(firstLayer);
